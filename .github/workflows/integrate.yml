@@ -1,0 +1,34 @@
+name: Laravel CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, bcmath, pdo, mysql
+          coverage: none
+      - name: install composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: create env file and generate app key
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: install npm dependencies
+        run: npm install
+      - name: run linting
+        run: ./vendor/bin/pint --test
+      - name: run prettier
+        run: npx prettier --check .
