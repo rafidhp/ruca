@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'username' => 'required|exists:users,username|max:100',
-            'password' => 'required'
+            'password' => 'required',
         ], [
             'username.required' => 'Username is required',
             'username.exists' => 'Username does not exist',
