@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PsikologController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/register', 'register')->middleware('guest')->name('auth.register');
     Route::post('/register/post', 'postregister')->middleware('guest')->name('auth.postregister');
     Route::get('/logout', 'logout')->middleware('auth')->name('auth.logout');
+});
+
+Route::controller(PsikologController::class)->middleware('auth')->group(function () {
+    Route::get('/psi-dashboard/{psikolog_id}', 'dashboard')->name('psi.dashboard');
 });
