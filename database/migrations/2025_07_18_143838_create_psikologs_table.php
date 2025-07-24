@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('psikologs', function (Blueprint $table) {
             $table->id();
+            $table->char('no_hp', 15);
+            $table->string('spesialisasi');
+            $table->string('str_doc');
+            $table->string('sip_doc');
+            $table->string('education');
+            $table->string('photo');
+            $table->text('description')->nullable();
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

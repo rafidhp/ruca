@@ -53,7 +53,7 @@ class AuthController extends Controller
             'username' => 'required|min:3|max:100|unique:users,username|string',
             'name' => 'required|min:3|max:100|string|regex:/^[A-Za-z\s]+$/',
             'email' => 'required|email|unique:users,email|max:100',
-            'age' => 'required|numeric|min:1|max_digits:2',
+            'birth_date' => 'required|date',
             'password' => 'required|confirmed|min:6',
         ], [
             'username.required' => 'Username is required',
@@ -64,10 +64,6 @@ class AuthController extends Controller
             'name.max' => 'Name must not exceed 100 characters',
             'name.min' => 'Name must be at least 3 characters',
             'name.regex' => 'Name may only contain uppercase letters, lowercase letters and spaces',
-            'age.required' => 'Age is required',
-            'age.numeric' => 'Age must be a number',
-            'age.max_digits' => 'Maximum age is 2 digits',
-            'age.min' => 'Minimum age is 1',
             'email.required' => 'Email is required',
             'email.email' => 'Invalid email format',
             'email.unique' => 'Email already exists',
@@ -81,7 +77,7 @@ class AuthController extends Controller
             'username' => $request->username,
             'name' => $request->name,
             'email' => $request->email,
-            'age' => $request->age,
+            'birth_date' => $request->birth_date,
             'password' => bcrypt($request->password),
             'role' => 'user',
         ]);
