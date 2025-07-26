@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Psikolog::class);
     }
+
+    public function eduvid()
+    {
+        return $this->hasOne(EduVid::class);
+    }
 }
