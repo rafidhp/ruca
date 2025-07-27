@@ -10,6 +10,7 @@ class Psikolog extends Model
     use HasFactory;
 
     protected $table = 'psikologs';
+
     protected $fillable = [
         'no_hp',
         'spesialisasi',

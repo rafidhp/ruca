@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Services\HashidsService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -33,7 +33,7 @@ class AuthController extends Controller
 
             if (Auth::user()->role == 'admin') {
                 return redirect()->route('dashboard');
-            } else if (Auth::user()->role == 'psikolog') {
+            } elseif (Auth::user()->role == 'psikolog') {
                 return redirect()->route('psi.dashboard', ['psikolog_id' => $hashids->encode(Auth::user()->psikolog->id)]);
             } else {
                 return redirect()->route('dashboard');

@@ -10,6 +10,7 @@ class EduVid extends Model
     use HasFactory;
 
     protected $table = 'edu_vids';
+
     protected $fillable = [
         'title',
         'vid_link',

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Psikolog;
-use Illuminate\Http\Request;
 use App\Services\HashidsService;
 use App\Services\YoutubeService;
 

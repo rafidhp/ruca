@@ -6,9 +6,6 @@ class YoutubeService
 {
     /**
      * Extract the YouTube video ID from a URL.
-     *
-     * @param string $url
-     * @return string|null
      */
     public function extractVideoId(string $url): ?string
     {
