@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PsikologSeeder::class,
             CategorySeeder::class,
+            EduVidSeeder::class,
         ]);
     }
 }
