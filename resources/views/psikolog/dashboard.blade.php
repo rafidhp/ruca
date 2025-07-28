@@ -1,7 +1,7 @@
 <h2>Welcome {{ $psikolog->user->name }}</h2>
 
 <br>
-<a href="">Ruca EduHub</a>
+<a href="{{ route('eduhub') }}">Ruca EduHub</a>
 
 @foreach ($eduvids as $eduvid)
     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $eduvid->youtube_id }}?rel=0"

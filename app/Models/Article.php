@@ -17,8 +17,14 @@ class Article extends Model
         'photo',
         'content',
         'upload_date',
+        'user_id',
         'category_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function category()
     {

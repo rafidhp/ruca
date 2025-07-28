@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(EduVid::class);
     }
+
+    public function article()
+    {
+        return $this->hasOne(Article::class);
+    }
 }

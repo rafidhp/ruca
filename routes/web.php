@@ -29,4 +29,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(PsikologController::class)->middleware('auth')->group(function () {
     Route::get('/psi-dashboard/{psikolog_id}', 'dashboard')->name('psi.dashboard');
+
+    // eduhub
+    Route::get('/eduhub', 'eduhub')->name('eduhub');
 });

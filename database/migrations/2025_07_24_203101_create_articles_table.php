@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('photo')->nullable();
             $table->text('content');
             $table->date('upload_date');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
