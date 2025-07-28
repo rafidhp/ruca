@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Services\HashidsService;
 
 class Article extends Model
 {
@@ -20,6 +21,11 @@ class Article extends Model
         'user_id',
         'category_id',
     ];
+
+    public function getHashidAttribute()
+    {
+        return app(HashidsService::class)->encode($this->id);
+    }
 
     public function user()
     {

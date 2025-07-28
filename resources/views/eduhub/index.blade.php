@@ -16,7 +16,7 @@
             <td>{{ $article->title }}</td>
             @if ($article->photo != null)
                 <td>
-                    <img src="{{ asset('/storage/article' . $article->hashid . '_' . $article->photo) }}"
+                    <img src="{{ asset('/storage/article/' . $article->hashid . '_' . $article->photo) }}"
                         alt="article image" style="width: 150px">
                 </td>
             @else
