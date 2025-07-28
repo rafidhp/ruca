@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             PsikologSeeder::class,
             CategorySeeder::class,
             EduVidSeeder::class,
+            ArticleSeeder::class,
         ]);
     }
 }

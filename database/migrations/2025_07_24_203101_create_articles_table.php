@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('photo')->nullable();
             $table->text('content');
-            $table->text('description');
+            $table->date('upload_date');
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });

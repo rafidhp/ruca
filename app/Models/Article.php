@@ -16,7 +16,7 @@ class Article extends Model
         'title',
         'photo',
         'content',
-        'description',
+        'upload_date',
         'category_id',
     ];
 

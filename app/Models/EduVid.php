@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\YoutubeService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,9 +16,15 @@ class EduVid extends Model
         'title',
         'vid_link',
         'description',
+        'upload_date',
         'user_id',
         'category_id',
     ];
+
+    public function getYoutubeIdAttribute()
+    {
+        return app(YoutubeService::class)->extractVideoId($this->vid_link);
+    }
 
     public function user()
     {

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Services\HashidsService;
 
 class Psikolog extends Model
 {
@@ -24,7 +25,7 @@ class Psikolog extends Model
 
     public function getHashidAttribute()
     {
-        return app(\App\Services\HashidsService::class)->encode($this->id);
+        return app(HashidsService::class)->encode($this->id);
     }
 
     public function user()

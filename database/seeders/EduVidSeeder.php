@@ -17,6 +17,7 @@ class EduVidSeeder extends Seeder
                 'title' => 'Test video 1',
                 'vid_link' => 'https://youtu.be/vMADTUm7BbU?si=1iikSyPW2Lsg5xZQ',
                 'description' => 'This is a test video description',
+                'upload_date' => '2025-07-31',
                 'user_id' => 3,
                 'category_id' => 2,
             ],

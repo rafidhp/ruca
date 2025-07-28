@@ -31,6 +31,9 @@ class CategorySeeder extends Seeder
             [
                 'category_name' => 'Penyakit Alat Kelamin',
             ],
+            [
+                'category_name' => 'Mental Health',
+            ],
         ];
 
         foreach ($categories as $category) {
